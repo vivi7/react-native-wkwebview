@@ -233,6 +233,10 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithCoder:(NSCoder *)aDecoder)
   }
 }
 
+- (void)setAllowsInlineMediaPlayback:(BOOL)allowsInlineMediaPlayback {
+  _webView.configuration.allowsInlineMediaPlayback = allowsInlineMediaPlayback;
+}
+
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000 /* __IPHONE_11_0 */
 - (void)setContentInsetAdjustmentBehavior:(UIScrollViewContentInsetAdjustmentBehavior)behavior
 {

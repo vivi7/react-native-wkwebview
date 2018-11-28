@@ -272,6 +272,11 @@ class WKWebView extends React.Component {
       'on-drag',
       'interactive', // iOS only
     ]),
+    /*
+     * A Boolean that determines whether HTML5 videos play inline or use the native full-screen controller.
+     * NOTE : In order for video to play inline, not only does this property need to be set to true, but the video element in the HTML document must also include the webkit-playsinline attribute.
+     */
+    allowsInlineMediaPlayback: PropTypes.bool,
   };
 
   state = {
@@ -369,6 +374,7 @@ class WKWebView extends React.Component {
         directionalLockEnabled={this.props.directionalLockEnabled}
         onNavigationResponse={this._onNavigationResponse}
         keyboardDismissMode={this.props.keyboardDismissMode}
+        allowsInlineMediaPlayback={this.props.allowsInlineMediaPlayback}
       />;
 
     return (
